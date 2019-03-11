@@ -1,6 +1,6 @@
 {
-  "name": "SimpleJson",
-  "id": "grafana-simple-json-datasource",
+  "name": "DateraSimpleJson",
+  "id": "datera-simple-json-datasource",
   "type": "datasource",
 
   "partials": {
@@ -11,9 +11,9 @@
   "annotations": true,
 
   "info": {
-    "description": "simple json datasource",
+    "description": "datera simple json datasource",
     "author": {
-      "name": "Grafana Labs",
+      "name": "Datera",
       "url": "https://grafana.com"
     },
     "logos": {

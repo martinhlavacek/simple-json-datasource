@@ -31,7 +31,7 @@ export class GenericDatasource {
     }
 
     return this.doRequest({
-      url: this.url + '/query',
+      url: this.url + '/grafana/query',
       data: query,
       method: 'POST'
     });
@@ -39,7 +39,7 @@ export class GenericDatasource {
 
   testDatasource() {
     return this.doRequest({
-      url: this.url + '/',
+      url: this.url + '/grafana',
       method: 'GET',
     }).then(response => {
       if (response.status === 200) {
@@ -63,7 +63,7 @@ export class GenericDatasource {
     };
 
     return this.doRequest({
-      url: this.url + '/annotations',
+      url: this.url + '/grafana/annotations',
       method: 'POST',
       data: annotationQuery
     }).then(result => {
@@ -77,7 +77,7 @@ export class GenericDatasource {
     };
 
     return this.doRequest({
-      url: this.url + '/search',
+      url: this.url + '/grafana/search',
       data: interpolated,
       method: 'POST',
     }).then(this.mapToTextValue);

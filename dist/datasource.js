@@ -51,7 +51,7 @@ var GenericDatasource = exports.GenericDatasource = function () {
       }
 
       return this.doRequest({
-        url: this.url + '/query',
+        url: this.url + '/grafana/query',
         data: query,
         method: 'POST'
       });
@@ -60,7 +60,7 @@ var GenericDatasource = exports.GenericDatasource = function () {
     key: 'testDatasource',
     value: function testDatasource() {
       return this.doRequest({
-        url: this.url + '/',
+        url: this.url + '/grafana',
         method: 'GET'
       }).then(function (response) {
         if (response.status === 200) {
@@ -85,7 +85,7 @@ var GenericDatasource = exports.GenericDatasource = function () {
       };
 
       return this.doRequest({
-        url: this.url + '/annotations',
+        url: this.url + '/grafana/annotations',
         method: 'POST',
         data: annotationQuery
       }).then(function (result) {
@@ -100,7 +100,7 @@ var GenericDatasource = exports.GenericDatasource = function () {
       };
 
       return this.doRequest({
-        url: this.url + '/search',
+        url: this.url + '/grafana/search',
         data: interpolated,
         method: 'POST'
       }).then(this.mapToTextValue);
